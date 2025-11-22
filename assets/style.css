@@ -1,0 +1,162 @@
+body {
+    background: linear-gradient(#fff, #ffffff99), url('./background.png');
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* New Simplified Version 6 CSS */
+/* Step 1: Common Properties: All required to make icons render reliably */
+.icon::before {
+  /* removed font- based rules */
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Step 2: Reference Individual Icons */
+.login::before {
+  /* using style CSS custom property */
+  font: var(--fa-font-solid);
+  content: "\f007";
+}
+
+/* Note: Make sure to include the correct weight and Unicode value for the icon */
+.tps::before {
+  /* using style CSS custom property */
+  font: var(--fa-font-solid);
+  content: "\f1ea";
+}
+
+nav {
+  background: linear-gradient(#c11, #800);
+  color: #fff;
+}
+
+.table {
+    box-shadow: 2px 2px 5px 1px;
+    position: relative;
+}
+.color {
+    width: 18px;
+    height: 18px;
+    border-radius: 8px;
+    background-color: blue;
+    border: 2px solid rgba(0, 0, 0, .15);
+    vertical-align: middle;
+}
+
+.patente {
+    text-transform: uppercase;
+    font-weight: 500;
+    background: #eee;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    padding: 0 8px;
+    vertical-align: middle;
+}
+
+dialog {
+    z-index: -1;
+    overflow: visible;
+    border: 0;
+    border-radius: 8px;
+    /* background: linear-gradient(#f1f7f4, #c3c9c1); */
+    background: transparent;
+}
+
+dialog::backdrop {
+    background-color: #00000080;
+}
+
+.card {
+    background: linear-gradient(#f1f7f4, #c3c9c1);
+}
+
+.form-select {
+    --bs-form-select-bg-img: #fff;
+    padding: 5px 5px 0 5px;
+}
+
+select#tipo_visita {
+    z-index: 4;
+}
+
+i.peaton {
+    font-family: fontAwesome;
+    background-color: red;
+    height: 30px;
+}
+
+.table td.fit,
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+
+#context-menu {
+  position: fixed;
+  z-index: 10000;
+  width: 150px;
+  background: #1b1b1a;
+  border-radius: 8px;
+  overflow: hidden;
+  transform: scale(0);
+  transform-origin: top left;
+}
+#context-menu.active {
+  transform: scale(1);
+  transition: transform .1s ease-in-out;
+}
+
+#context-menu .item {
+  padding: 8px 10px;
+  font-size: 16px;
+  color: #eee;
+}
+
+#context-menu .item:hover {
+  background: #555;
+}
+
+#context-menu .item i {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+ /*DATE TIME STYLE*/
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  background: 0 0;
+  margin: 0;
+  opacity: 0;
+  pointer-events: auto;
+}
+
+.row { display: flex; }
+
+.cell {
+  width: 40px; height: 40px; margin: 4px;
+  padding: 30px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  user-select: none;
+  -moz-user-select: none;
+}
+
+.cell-sm {
+  width: 19px !important; height: 10px !important; margin: 3px;
+}
+
+.free { background: #28a745; }      /* Verde */
+.occupied { background: #dc3545; }  /* Rojo */
+.reserved { background: #ffc107; }  /* Amarillo */
+
