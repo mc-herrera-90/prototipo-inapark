@@ -1,3 +1,7 @@
+:root {
+  background-color: #ffffff;
+}
+
 body {
     background: linear-gradient(#fff, #ffffff99), url('./background.png');
     background-size: 600px;
