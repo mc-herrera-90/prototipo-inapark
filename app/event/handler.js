@@ -41,8 +41,16 @@ export async function initUIEvents() {
     modal.showModal()
     updateView();
   });
-  btnModalMatrix.addEventListener('click', () => {
-    
+
+  btnModalMatrix.addEventListener('click', (e) => {
+    if (e.target.textContent === 'Ver espacios') {
+      renderMatrix(parking.matrix, document.getElementById('min-parking'), undefined, 'cell-sm');
+      updateView();
+      e.target.textContent = 'Ocultar';
+    } else {
+      document.getElementById('min-parking').innerHTML = ''
+      e.target.textContent = 'Ver espacios';
+    }
   })
 
   btnConfig.addEventListener("click", async() => {
@@ -226,21 +234,5 @@ export async function initUIEvents() {
     });
   }
   updateView();
-
-  const btnVer = document.getElementById("btn-show-matrix");
-  // 👉 Mostrar la matriz solo cuando se presiona el botón
-  btnVer.addEventListener("click", (event) => {
-    // event.target.parentNode.parentNode.parentNode.parentNode.style.zIndex = "-1";
-    // container.style.zIndex =
-    // modal.close();
-    // setTimeout((event) => {
-    //   modal.showModal()
-    // }, 2000)
-
-    const number = parking.getNumber(1,0);
-    renderMatrix(parking.matrix, document.getElementById('min-parking'), undefined, 'cell-sm');
-    // alert(number);
-    updateView();
-  });
 
 }
