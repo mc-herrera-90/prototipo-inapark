@@ -16,6 +16,7 @@ function initApplication() {
 document.onreadystatechange = () => {
     if (document.readyState === "complete") {
         initApplication();
+
     }
 };
 
